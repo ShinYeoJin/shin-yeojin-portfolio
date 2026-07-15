@@ -32,6 +32,8 @@
 ### J-Line 속눈썹 펌 홈페이지
 - 실제 네이버에 등록되어 운영 중인 미용 홈페이지
 - **기술 스택**: Next.js, TypeScript, Tailwind CSS, Vercel
+- **배포**: [바로가기](https://jline.vercel.app)
+- **GitHub**: [바로가기](https://github.com/ShinYeoJin/jline.git)
 
 ## 🚀 로컬 실행 방법
 

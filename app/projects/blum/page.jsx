@@ -136,7 +136,7 @@ export default function BlumPage() {
         {/* 버튼 영역 */}
         <div className="flex flex-row flex-wrap gap-4 mt-2">
           <motion.a
-            href="https://blum-landing.vercel.app/v1"
+            href="https://blum-landing.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
             className="flex justify-center items-center px-6 py-2 rounded-2xl text-2xl font-bold transition-all duration-300 shadow-lg min-w-[160px]"
