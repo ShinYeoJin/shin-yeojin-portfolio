@@ -24,10 +24,10 @@ const projects = [
   },
   {
     id: 3,
-    path: null,
-    gradient: 'linear-gradient(135deg, rgba(15,118,110,0.4), rgba(30,64,175,0.3))',
-    glow: 'rgba(20,184,166,0.2)',
-    label: '🚀 Coming Soon',
+    path: '/projects/blum',
+    gradient: 'linear-gradient(135deg, #0D1117, #D4AF37)',
+    glow: 'rgba(212,175,55,0.4)',
+    label: 'BLUM',
     size: 'sm',
   },
 ];
