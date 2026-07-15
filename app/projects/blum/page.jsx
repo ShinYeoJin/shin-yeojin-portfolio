@@ -7,8 +7,8 @@ const techStack = ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Vercel'];
 const features = [
   { icon: 'ri-layout-3-line',       text: '3가지 디자인 버전 (미니멀 / 볼드 / 시네마틱)' },
   { icon: 'ri-stack-line',          text: 'Sticky 스크롤 기반 3D flip 카드 애니메이션' },
-  { icon: 'ri-layers-line',         text: '스택 구조 서비스 섹션 (전체화면 슬라이드)' },
-  { icon: 'ri-counter-2-line',      text: '숫자 카운트업 애니메이션' },
+  { icon: 'ri-slideshow-2-line',     text: '스택 구조 서비스 섹션 (전체화면 슬라이드)' },
+  { icon: 'ri-bar-chart-line',      text: '숫자 카운트업 애니메이션' },
   { icon: 'ri-smartphone-line',     text: '반응형 디자인 (모바일 / 태블릿 / 데스크탑)' },
 ];
 
