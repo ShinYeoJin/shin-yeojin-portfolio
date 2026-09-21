@@ -38,6 +38,16 @@ export default function Section3() {
         <span className="text-cyan-300/70">✦</span>
       </motion.h1>
 
+      <motion.p
+        className="max-w-2xl text-center text-sm sm:text-base text-white/55 font-light leading-7 tracking-wide"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        제 이름 &lsquo;여진(如辰)&rsquo;은 &lsquo;별과 같이 되라&rsquo;는 뜻입니다. 별은 고요해 보이지만, 그 안에서는 끊임없는 반응으로 빛을 만들어냅니다. 제 이름의 뜻처럼 빛이 사용자에게 닿을 때까지 답을 놓지 않고 붙잡는 개발자입니다.
+      </motion.p>
+
       <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-10 lg:gap-14 w-full max-w-7xl">
         {[Introduce1, Introduce2, Introduce3].map((Introduce, i) => (
           <motion.div
