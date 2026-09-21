@@ -21,7 +21,7 @@ const categories = [
     icon: 'ri-cloud-line',
     gradient: 'linear-gradient(135deg, #a78bfa, #ec4899)',
     dotColor: '#c084fc',
-    skills: ['AWS RDS', 'Vercel', 'Render', 'Git', 'GitHub'],
+    skills: ['AWS RDS', 'Supabase', 'Vercel', 'Render', 'Git', 'GitHub'],
   },
 ];
 

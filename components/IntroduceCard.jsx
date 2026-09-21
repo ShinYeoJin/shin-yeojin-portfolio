@@ -1,18 +1,33 @@
-const IntroduceCard = ({ icon, title, subtitle }) => {
+'use client';
+
+const IntroduceCard = ({ label, dotColor, title, subtitle, featured = false }) => {
   return (
     <article
-      className="w-full h-full flex flex-col justify-start items-center text-white gap-6 text-center p-6 rounded-2xl shadow-xl"
+      className="w-full h-full flex flex-col text-white rounded-sm"
       style={{
-        background: 'linear-gradient(145deg, rgba(13,20,50,0.9), rgba(8,13,36,0.95))',
-        border: '1px solid rgba(147,197,253,0.15)',
-        boxShadow: '0 0 30px rgba(6,182,212,0.07), inset 0 0 20px rgba(0,0,0,0.3)',
-        backdropFilter: 'blur(12px)',
+        background: featured ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.02)',
+        border: '1px solid rgba(255,255,255,0.10)',
       }}
     >
-      <i className={`${icon} mt-6 text-7xl bg-gradient-to-r from-cyan-300 via-blue-400 to-violet-400 bg-clip-text text-transparent`}></i>
-      <div className="flex flex-col gap-4">
-        <h3 className="text-2xl sm:text-3xl font-extrabold tracking-wide text-white/95">{title}</h3>
-        <p className="text-base sm:text-lg text-white/65 leading-relaxed">{subtitle}</p>
+      {/* 상단 라벨 */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10">
+        <span
+          className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
+          style={{ background: dotColor }}
+        />
+        <span className="font-mono text-xs text-white/40 tracking-widest uppercase">
+          {label}
+        </span>
+      </div>
+
+      {/* 본문 */}
+      <div className="flex flex-col gap-4 px-5 py-6">
+        <h3 className="text-xl sm:text-2xl font-extrabold tracking-wide text-white/95 break-keep">
+          {title}
+        </h3>
+        <p className="text-sm sm:text-base text-white/60 leading-relaxed break-keep">
+          {subtitle}
+        </p>
       </div>
     </article>
   );
