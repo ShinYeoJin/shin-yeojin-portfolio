@@ -4,6 +4,31 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+function CopyField({ label, value }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(value).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    });
+  };
+  return (
+    <div className="flex items-center justify-between gap-3 rounded-lg px-3 py-2" style={{ background: 'rgba(6,182,212,0.08)', border: '1px solid rgba(6,182,212,0.2)' }}>
+      <div className="flex items-center gap-2 min-w-0">
+        <span className="text-xs text-white/40 shrink-0">{label}</span>
+        <span className="font-mono text-sm text-white/90 truncate">{value}</span>
+      </div>
+      <button
+        onClick={handleCopy}
+        className="shrink-0 rounded px-2 py-0.5 text-xs font-semibold transition-all duration-200"
+        style={{ background: copied ? 'rgba(34,197,94,0.2)' : 'rgba(6,182,212,0.15)', color: copied ? '#4ade80' : '#67e8f9', border: `1px solid ${copied ? 'rgba(34,197,94,0.4)' : 'rgba(6,182,212,0.3)'}` }}
+      >
+        {copied ? '✓ 복사됨' : '복사'}
+      </button>
+    </div>
+  );
+}
+
 const techStack = [
   'Next.js', 'TypeScript', 'Node.js', 'Express.js',
   'PostgreSQL', 'Supabase', 'recharts', 'Vercel', 'Render', '카카오맵 API',
@@ -127,6 +152,37 @@ export default function GeoMonitorPage() {
           </motion.div>
         </div>
 
+        {/* 테스트 계정 안내 */}
+        <motion.div
+          className="rounded-xl p-5 flex flex-col gap-3"
+          style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.25)', boxShadow: '0 0 20px rgba(6,182,212,0.05)' }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-cyan-400 text-lg">🔑</span>
+            <h3 className="text-base font-bold text-white/90">테스트 계정으로 직접 체험해보세요</h3>
+          </div>
+          <div className="flex flex-col gap-2">
+            <CopyField label="이메일" value="qwer4321@qwer4321.com" />
+            <CopyField label="비밀번호" value="qwer4321" />
+          </div>
+          <p className="text-xs text-white/40 leading-relaxed">
+            읽기 전용 계정입니다. 데이터 조회 및 리포트 출력은 가능하나 데이터 변경·삭제는 불가합니다.
+          </p>
+          <motion.a
+            href="https://yuhyun-sensor-monitoring-front.vercel.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-bold transition-all duration-300"
+            style={{ background: 'rgba(6,182,212,0.15)', border: '1px solid rgba(6,182,212,0.4)', color: '#67e8f9' }}
+            whileHover={{ scale: 1.04, backgroundColor: 'rgba(6,182,212,0.25)' }}
+          >
+            테스트 계정으로 로그인하기 →
+          </motion.a>
+        </motion.div>
+
         {/* 버튼 영역 */}
         <div className="flex flex-row flex-wrap gap-4 mt-2">
           <motion.a
@@ -136,7 +192,7 @@ export default function GeoMonitorPage() {
             className="flex justify-center items-center bg-white text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
             whileHover={{ scale: 1.1 }}
           >
-            Visit Site 🔎
+            사이트 방문
           </motion.a>
 
           <motion.a
@@ -146,7 +202,7 @@ export default function GeoMonitorPage() {
             className="flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg min-w-[160px] border border-white/20"
             whileHover={{ scale: 1.1 }}
           >
-            GitHub 🐙
+            GitHub
           </motion.a>
 
           <motion.div
@@ -157,7 +213,7 @@ export default function GeoMonitorPage() {
               href="/?noAnim=true#section2"
               className="flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
             >
-              ⬅ Back
+              ← 뒤로가기
             </Link>
           </motion.div>
         </div>
