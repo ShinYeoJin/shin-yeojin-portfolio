@@ -13,13 +13,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "신여진 | Frontend Developer",
-  description: "신여진의 프론트엔드 개발자 포트폴리오",
+  title: "신여진 | Full-Stack Developer",
+  description: "신여진의 풀스택 개발자 포트폴리오",
+  openGraph: {
+    title: "신여진 | Full-Stack Developer",
+    description: "신여진의 풀스택 개발자 포트폴리오",
+    images: [{ url: "/screenshot1.png" }],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

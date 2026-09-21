@@ -17,7 +17,7 @@ const features = [
   { icon: 'ri-calendar-check-line', text: '네이버 예약 시스템 연동' },
 ];
 
-const screenshots = ['/jline1.png', '/jline2.png', '/jline3.png'];
+const screenshots = ['/jline1.jpg', '/jline2.png', '/jline3.png'];
 
 export default function JLinePage() {
   const [current, setCurrent] = useState(0);

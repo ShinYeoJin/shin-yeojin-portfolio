@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
 
       <p className="text-center text-white/20 text-xs mt-8 tracking-widest">
-        © 2025 Shin Yeo Jin · Built with Next.js
+        © 2026 Shin Yeo Jin · Built with Next.js
       </p>
     </footer>
   );

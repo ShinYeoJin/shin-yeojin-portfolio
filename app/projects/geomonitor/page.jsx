@@ -6,14 +6,14 @@ import { useState } from 'react';
 
 const techStack = [
   'Next.js', 'TypeScript', 'Node.js', 'Express.js',
-  'PostgreSQL', 'AWS RDS', 'Vercel', 'Render', '카카오맵 API',
+  'PostgreSQL', 'Supabase', 'recharts', 'Vercel', 'Render', '카카오맵 API',
 ];
 
 const features = [
   { icon: 'ri-pulse-line', text: '실시간 센서 모니터링 대시보드' },
   { icon: 'ri-map-pin-2-line', text: '카카오맵 현장 위치 표시' },
-  { icon: 'ri-file-download-line', text: '엑셀 / PDF 보고서 출력' },
-  { icon: 'ri-qr-code-line', text: 'QR 코드 현장 조회' },
+  { icon: 'ri-file-download-line', text: 'Excel / PDF 리포트 출력 (exceljs, jsPDF)' },
+  { icon: 'ri-qr-code-line', text: 'QR코드 현장 조회 (qrcode)' },
   { icon: 'ri-database-2-line', text: '에이전트 기반 데이터 자동 수집' },
 ];
 

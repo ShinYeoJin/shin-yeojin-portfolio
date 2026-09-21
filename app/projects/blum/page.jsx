@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
-const techStack = ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Vercel'];
+const techStack = ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Framer Motion', 'Vercel'];
 
 const features = [
   { icon: 'ri-layout-3-line',       text: '3가지 디자인 버전 (미니멀 / 볼드 / 시네마틱)' },
