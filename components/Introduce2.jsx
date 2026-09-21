@@ -4,8 +4,8 @@ export default function Introduce2() {
   return (
     <IntroduceCard
       icon="ri-line-chart-fill"
-      title={<>사용자 경험을 고려한<br />꼼꼼한 개발</>}
-      subtitle={<>완성도 높은 결과물을 목표로 하되,<br />상황에 따라 우선순위를 조절해<br />효율적으로 개발합니다.</>}
+      title={<>요청받지 않은 부분까지<br />사용자 입장에서 생각합니다</>}
+      subtitle="날짜 범위를 조회하는 기능을 만들 때, 클라이언트가 요청하지 않았지만 사용자가 실수로 잘못된 범위를 선택할 수 있다는 걸 먼저 떠올려 방지 로직을 직접 설계했습니다."
     />
   );
 } 

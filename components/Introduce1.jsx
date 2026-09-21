@@ -4,8 +4,8 @@ export default function Introduce1() {
   return (
     <IntroduceCard
       icon="ri-question-mark"
-      title={<>빠른 학습과<br />실전 적용</>}
-      subtitle={<>새로운 프레임워크나 라이브러리도<br />주저하지 않고 탐구하며,<br />실제 프로젝트에 빠르게 적용합니다.</>}
+      title={<>익숙하지 않은 인프라도<br />직접 부딪혀 배웁니다</>}
+      subtitle="센서 데이터가 24시간 끊기지 않아야 한다는 요구사항 앞에서, 수업 때 써본 적 없는 관리형 데이터베이스를 직접 선택하고 구축했습니다. 익숙한 도구보다 문제에 맞는 도구를 택하는 쪽을 고릅니다."
     />
   );
 }

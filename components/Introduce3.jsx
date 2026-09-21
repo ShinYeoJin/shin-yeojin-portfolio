@@ -4,8 +4,8 @@ export default function Introduce3() {
   return (
     <IntroduceCard
       icon="ri-repeat-fill"
-      title={<>문제의 근본 원인을<br />분석하고 해결합니다</>}
-      subtitle={<>개발 과정에서 마주치는<br />오류나 복잡한 요구사항을<br />단순히 넘어가지 않고,<br />원인부터 해결책까지 철저히 분석합니다.</>}
+      title={<>AI가 만든 결과물도<br />검증하는 습관을 지킵니다</>}
+      subtitle="Claude Code로 리팩토링하던 중, 두 페이지의 비슷한 컴포넌트를 비교하다 상태 색상 표시 로직이 한쪽에서만 빠진 버그를 발견해 수정했습니다. 결과를 그대로 믿지 않고 대조하며 확인합니다."
     />
   );
 }
