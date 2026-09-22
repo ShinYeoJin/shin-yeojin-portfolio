@@ -93,6 +93,48 @@ export default function JLinePage() {
           </div>
         </div>
 
+        {/* 문제 해결 섹션 */}
+        <motion.div
+          className="flex flex-col gap-6 rounded-xl p-6 border"
+          style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(236,72,153,0.12)' }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          <h3 className="text-xl font-bold tracking-wide uppercase" style={{ color: 'rgba(236,72,153,1)' }}>문제 해결 과정</h3>
+
+          {/* 플로우 다이어그램 */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {['문제', '접근', '해결'].map((label, i) => (
+              <div key={label} className="flex items-center gap-2">
+                <span className="font-mono text-xs tracking-widest uppercase border rounded px-3 py-1" style={{ color: 'rgba(236,72,153,0.7)', borderColor: 'rgba(236,72,153,0.25)', background: 'rgba(236,72,153,0.05)' }}>
+                  {label}
+                </span>
+                {i < 2 && <span className="font-mono text-sm" style={{ color: 'rgba(236,72,153,0.3)' }}>→</span>}
+              </div>
+            ))}
+          </div>
+
+          {/* 사례 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {[
+              { label: '문제', text: '클라이언트가 이미 네이버 예약·톡톡·플레이스 후기로 고객을 응대하고 있었습니다.' },
+              { label: '접근', text: '별도 예약 시스템을 새로 구축하는 대신, 기존 서비스와 연동하는 방식을 검토했습니다.' },
+              { label: '해결', text: '예약 문의는 네이버 톡톡으로, 즉시 예약은 네이버 예약 페이지로, 후기 보기는 네이버 플레이스 후기로 각각 연결되도록 구현했습니다.' },
+            ].map(({ label, text }) => (
+              <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(236,72,153,0.04)', border: '1px solid rgba(236,72,153,0.15)' }}>
+                <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: 'rgba(236,72,153,0.6)' }}>{label}</span>
+                <p className="text-sm text-white/75 leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 배운 점 */}
+          <p className="font-mono text-xs text-white/40 leading-relaxed border-t pt-4" style={{ borderColor: 'rgba(236,72,153,0.1)' }}>
+            → 기술적으로 새로운 걸 만드는 것보다, 이미 있는 걸 잘 연결하는 게 더 나은 해결책일 수 있다는 걸 배웠습니다.
+          </p>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row gap-8">
           {/* 주요 기능 */}
           <motion.div
@@ -137,12 +179,12 @@ export default function JLinePage() {
         </div>
 
         {/* 버튼 영역 */}
-        <div className="flex flex-row flex-wrap gap-4 mt-2">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 mt-2">
           <motion.a
             href="https://jline.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center bg-white text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gradient-to-r hover:from-pink-400 hover:to-violet-500 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
+            className="w-full sm:w-auto flex justify-center items-center bg-white text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gradient-to-r hover:from-pink-400 hover:to-violet-500 hover:text-white transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
           >
             사이트 방문
@@ -152,19 +194,20 @@ export default function JLinePage() {
             href="https://github.com/ShinYeoJin/jline"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg min-w-[160px] border border-white/20"
+            className="w-full sm:w-auto flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg border border-white/20"
             whileHover={{ scale: 1.1 }}
           >
             GitHub
           </motion.a>
 
           <motion.div
+            className="w-full sm:w-auto"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 120 }}
           >
             <Link
               href="/?noAnim=true#section2"
-              className="flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
+              className="w-full flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg"
             >
               ← 뒤로가기
             </Link>

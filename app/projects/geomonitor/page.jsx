@@ -112,6 +112,67 @@ export default function GeoMonitorPage() {
           </div>
         </div>
 
+        {/* 문제 해결 섹션 */}
+        <motion.div
+          className="flex flex-col gap-6 bg-white/5 rounded-xl p-6 border border-white/10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          <h3 className="text-xl font-bold text-cyan-400 tracking-wide uppercase">문제 해결 과정</h3>
+
+          {/* 플로우 다이어그램 */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {['문제', '접근', '해결'].map((label, i) => (
+              <div key={label} className="flex items-center gap-2">
+                <span className="font-mono text-xs tracking-widest uppercase text-white/50 border border-white/20 rounded px-3 py-1 bg-white/5">
+                  {label}
+                </span>
+                {i < 2 && <span className="font-mono text-white/30 text-sm">→</span>}
+              </div>
+            ))}
+          </div>
+
+          {/* 사례 1 */}
+          <div className="flex flex-col gap-3">
+            <p className="font-mono text-[11px] tracking-widest uppercase text-cyan-400/70">CASE 01 — 날짜 범위 선택 UX</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                { label: '문제', text: '클라이언트 요청은 시작일·종료일 입력 후 조회하는 수준이었지만, 종료일을 시작일보다 이전으로 선택해도 막히지 않는 걸 발견했습니다.' },
+                { label: '접근', text: '날짜 선택 UI가 브라우저 네이티브 input과 직접 구현한 커스텀 캘린더 두 가지로 나뉘어 있었습니다. 클릭 자체를 막기보다, 잘못된 날짜를 새 시작일로 재해석하는 방식을 택했습니다.' },
+                { label: '해결', text: '네이티브 입력에는 min 속성을 적용하고, 커스텀 캘린더는 클릭한 날짜가 시작일보다 이전이면 시작일과 종료일을 스왑하도록 구현했습니다.' },
+              ].map(({ label, text }) => (
+                <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.15)' }}>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-cyan-400/60">{label}</span>
+                  <p className="text-sm text-white/75 leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 사례 2 */}
+          <div className="flex flex-col gap-3">
+            <p className="font-mono text-[11px] tracking-widest uppercase text-cyan-400/70">CASE 02 — 센서 데이터 누락</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {[
+                { label: '문제', text: '정상 수집되던 센서 데이터가 갑자기 전부 누락되고, 서버 로그에 타입 추론 오류가 반복됐습니다.' },
+                { label: '접근', text: '"어제는 됐는데 왜 오늘부터 안 됐는가"를 파고들자, DB가 비어있을 때는 중복 검사 쿼리가 타입 추론을 유발하지 않았지만, 데이터가 쌓인 뒤부터 PostgreSQL이 파라미터 타입을 잘못 추론한다는 걸 발견했습니다.' },
+                { label: '해결', text: '타입 캐스팅으로 우회하는 대신, 중복 확인 쿼리 방식을 DB의 UNIQUE 제약조건을 활용하는 ON CONFLICT DO NOTHING 구조로 교체했습니다.' },
+              ].map(({ label, text }) => (
+                <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.15)' }}>
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-cyan-400/60">{label}</span>
+                  <p className="text-sm text-white/75 leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 배운 점 */}
+          <p className="font-mono text-xs text-white/40 leading-relaxed border-t border-white/10 pt-4">
+            → 요구사항에 없는 부분도 실제 사용 맥락을 먼저 상상하고, 에러 메시지 이면의 근본 원인을 끝까지 좁혀가는 습관을 갖게 되었습니다.
+          </p>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row gap-8">
           {/* 주요 기능 */}
           <motion.div
@@ -184,12 +245,12 @@ export default function GeoMonitorPage() {
         </motion.div>
 
         {/* 버튼 영역 */}
-        <div className="flex flex-row flex-wrap gap-4 mt-2">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 mt-2">
           <motion.a
             href="https://yuhyun-sensor-monitoring-front.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center bg-white text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
+            className="w-full sm:w-auto flex justify-center items-center bg-white text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gradient-to-r hover:from-blue-400 hover:to-cyan-400 hover:text-white transition-all duration-300 shadow-lg"
             whileHover={{ scale: 1.1 }}
           >
             사이트 방문
@@ -199,19 +260,20 @@ export default function GeoMonitorPage() {
             href="https://github.com/ShinYeoJin/yuhyun-sensor-monitoring-front"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg min-w-[160px] border border-white/20"
+            className="w-full sm:w-auto flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg border border-white/20"
             whileHover={{ scale: 1.1 }}
           >
             GitHub
           </motion.a>
 
           <motion.div
+            className="w-full sm:w-auto"
             whileHover={{ scale: 1.1 }}
             transition={{ type: 'spring', stiffness: 120 }}
           >
             <Link
               href="/?noAnim=true#section2"
-              className="flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
+              className="w-full flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg"
             >
               ← 뒤로가기
             </Link>

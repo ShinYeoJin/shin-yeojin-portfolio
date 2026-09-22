@@ -88,6 +88,48 @@ export default function BlumPage() {
           ))}
         </div>
 
+        {/* 문제 해결 섹션 */}
+        <motion.div
+          className="flex flex-col gap-6 rounded-xl p-6 border"
+          style={{ background: 'rgba(212,175,55,0.04)', border: '1px solid rgba(212,175,55,0.15)' }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          <h3 className="text-xl font-bold tracking-wide uppercase" style={{ color: '#D4AF37' }}>문제 해결 과정</h3>
+
+          {/* 플로우 다이어그램 */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {['문제', '접근', '해결'].map((label, i) => (
+              <div key={label} className="flex items-center gap-2">
+                <span className="font-mono text-xs tracking-widest uppercase border rounded px-3 py-1" style={{ color: 'rgba(212,175,55,0.7)', borderColor: 'rgba(212,175,55,0.25)', background: 'rgba(212,175,55,0.06)' }}>
+                  {label}
+                </span>
+                {i < 2 && <span className="font-mono text-sm" style={{ color: 'rgba(212,175,55,0.3)' }}>→</span>}
+              </div>
+            ))}
+          </div>
+
+          {/* 사례 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {[
+              { label: '문제', text: '스크롤 시 콘텐츠가 순차 전환되는 애니메이션을 구현하려 했지만, 애니메이션이 끝나기 전에 다음 콘텐츠가 나오거나, 스크롤 한 번에 여러 콘텐츠가 지나가거나, 이전 콘텐츠가 겹쳐 보이는 문제가 반복됐습니다.' },
+              { label: '접근', text: '원하는 화면과 실제 화면을 녹화해 비교하며 정확히 어느 지점이 다른지 짚어냈고, 여러 차례 구조를 재설계하며 안정적으로 동작하는 방식(CSS scroll-snap, Intersection Observer)을 찾아냈습니다.' },
+              { label: '해결', text: '스크롤 단위를 고정하고, 각 섹션의 진입·이탈을 감지해 스크롤을 올릴 때는 애니메이션이 역순으로 진행되는 구조를 구현했습니다.' },
+            ].map(({ label, text }) => (
+              <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}>
+                <span className="font-mono text-[10px] tracking-widest uppercase" style={{ color: 'rgba(212,175,55,0.6)' }}>{label}</span>
+                <p className="text-sm text-white/75 leading-relaxed">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* 배운 점 */}
+          <p className="font-mono text-xs text-white/40 leading-relaxed border-t pt-4" style={{ borderColor: 'rgba(212,175,55,0.1)' }}>
+            → 원하는 결과를 막연히 설명하기보다 실제 화면과 비교해 구체적으로 짚어내는 소통이 더 정확하다는 걸 배웠고, 사용한 애니메이션 기법과 구현 방식을 별도로 정리해뒀습니다.
+          </p>
+        </motion.div>
+
         <div className="flex flex-col md:flex-row gap-8">
           {/* 주요 기능 */}
           <motion.div
@@ -134,12 +176,12 @@ export default function BlumPage() {
         </div>
 
         {/* 버튼 영역 */}
-        <div className="flex flex-row flex-wrap gap-4 mt-2">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 mt-2">
           <motion.a
             href="https://blum-landing.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center px-6 py-2 rounded-2xl text-2xl font-bold transition-all duration-300 shadow-lg min-w-[160px]"
+            className="w-full sm:w-auto flex justify-center items-center px-6 py-2 rounded-2xl text-2xl font-bold transition-all duration-300 shadow-lg"
             style={{ background: '#D4AF37', color: '#0D1117' }}
             whileHover={{ scale: 1.1 }}
           >
@@ -150,16 +192,16 @@ export default function BlumPage() {
             href="https://github.com/ShinYeoJin/blum-landing"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg min-w-[160px] border border-white/20"
+            className="w-full sm:w-auto flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg border border-white/20"
             whileHover={{ scale: 1.1 }}
           >
             GitHub
           </motion.a>
 
-          <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 120 }}>
+          <motion.div className="w-full sm:w-auto" whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 120 }}>
             <Link
               href="/?noAnim=true#section2"
-              className="flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
+              className="w-full flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg"
             >
               ← 뒤로가기
             </Link>
