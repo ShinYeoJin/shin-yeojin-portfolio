@@ -143,7 +143,7 @@ export default function BlumPage() {
             style={{ background: '#D4AF37', color: '#0D1117' }}
             whileHover={{ scale: 1.1 }}
           >
-            Visit Site 🔎
+            사이트 방문
           </motion.a>
 
           <motion.a
@@ -153,7 +153,7 @@ export default function BlumPage() {
             className="flex justify-center items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-gray-600 transition-all duration-300 shadow-lg min-w-[160px] border border-white/20"
             whileHover={{ scale: 1.1 }}
           >
-            GitHub 🐙
+            GitHub
           </motion.a>
 
           <motion.div whileHover={{ scale: 1.1 }} transition={{ type: 'spring', stiffness: 120 }}>
@@ -161,7 +161,7 @@ export default function BlumPage() {
               href="/?noAnim=true#section2"
               className="flex justify-center items-center bg-gray-200 text-black px-6 py-2 rounded-2xl text-2xl font-bold hover:bg-yellow-400 hover:text-white transition-all duration-300 shadow-lg min-w-[160px]"
             >
-              ⬅ Back
+              ← 뒤로가기
             </Link>
           </motion.div>
         </div>
