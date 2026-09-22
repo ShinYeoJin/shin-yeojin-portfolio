@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const STAR_COUNT = 50;
 
@@ -48,16 +48,20 @@ export default function Section2() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
-  const stars = useMemo(() => (
-    Array.from({ length: STAR_COUNT }, (_, i) => ({
-      id: i,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 2 + 0.5,
-      duration: `${Math.random() * 4 + 2}s`,
-      delay: `${Math.random() * 4}s`,
-    }))
-  ), []);
+  const [stars, setStars] = useState([]);
+
+  useEffect(() => {
+    setStars(
+      Array.from({ length: STAR_COUNT }, (_, i) => ({
+        id: i,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        size: Math.random() * 2 + 0.5,
+        duration: `${Math.random() * 4 + 2}s`,
+        delay: `${Math.random() * 4}s`,
+      }))
+    );
+  }, []);
 
   const initialAngles = projects.map((_, i) => (i / projects.length) * 360);
 

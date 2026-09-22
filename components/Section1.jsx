@@ -1,24 +1,26 @@
 'use client';
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const STAR_COUNT = 80;
 
 export default function Section1() {
   const [mounted, setMounted] = useState(false);
+  const [stars, setStars] = useState([]);
 
-  useEffect(() => { setMounted(true); }, []);
-
-  const stars = useMemo(() => (
-    Array.from({ length: STAR_COUNT }, (_, i) => ({
-      id: i,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 2.5 + 0.5,
-      duration: `${Math.random() * 4 + 2}s`,
-      delay: `${Math.random() * 4}s`,
-    }))
-  ), []);
+  useEffect(() => {
+    setStars(
+      Array.from({ length: STAR_COUNT }, (_, i) => ({
+        id: i,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
+        size: Math.random() * 2.5 + 0.5,
+        duration: `${Math.random() * 4 + 2}s`,
+        delay: `${Math.random() * 4}s`,
+      }))
+    );
+    setMounted(true);
+  }, []);
 
   return (
     <div

@@ -62,6 +62,8 @@ export default function JLinePage() {
               src={screenshots[current]}
               alt={`스크린샷 ${current + 1}`}
               fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              priority={current === 0}
               className="object-cover rounded-2xl"
             />
           </motion.div>
