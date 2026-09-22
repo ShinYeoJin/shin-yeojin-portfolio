@@ -100,7 +100,8 @@ export default function JLinePage() {
           className="flex flex-col gap-6 rounded-xl p-6 border"
           style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(236,72,153,0.12)' }}
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           <h3 className="text-xl font-bold tracking-wide uppercase" style={{ color: 'rgba(236,72,153,1)' }}>문제 해결 과정</h3>
@@ -143,7 +144,8 @@ export default function JLinePage() {
             className="flex-1 rounded-xl p-6 border"
             style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(236,72,153,0.12)' }}
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide uppercase">주요 기능</h3>
@@ -162,7 +164,8 @@ export default function JLinePage() {
             className="flex-1 rounded-xl p-6 border"
             style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(236,72,153,0.12)' }}
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide uppercase">기술 스택</h3>

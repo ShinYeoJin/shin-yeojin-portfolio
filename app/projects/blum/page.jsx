@@ -93,7 +93,8 @@ export default function BlumPage() {
           className="flex flex-col gap-6 rounded-xl p-6 border"
           style={{ background: 'rgba(212,175,55,0.04)', border: '1px solid rgba(212,175,55,0.15)' }}
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
           <h3 className="text-xl font-bold tracking-wide uppercase" style={{ color: '#D4AF37' }}>문제 해결 과정</h3>
@@ -135,7 +136,8 @@ export default function BlumPage() {
           <motion.div
             className="flex-1 bg-white/5 rounded-xl p-6 border border-white/10"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide uppercase">주요 기능</h3>
@@ -153,7 +155,8 @@ export default function BlumPage() {
           <motion.div
             className="flex-1 bg-white/5 rounded-xl p-6 border border-white/10"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h3 className="text-xl font-bold text-yellow-400 mb-4 tracking-wide uppercase">기술 스택</h3>
