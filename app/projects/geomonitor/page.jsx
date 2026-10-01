@@ -227,6 +227,7 @@ export default function GeoMonitorPage() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
+          <p className="text-xs text-white/55 mb-3">표시되는 센서 데이터는 포트폴리오 시연을 위해 미리 생성해둔 샘플 데이터입니다. 실제 운영 환경에서는 센서로부터 1시간 단위로 실시간 수집됩니다.</p>
           <div className="flex items-center gap-2">
             <span className="text-cyan-400 text-lg">🔑</span>
             <h3 className="text-base font-bold text-white/90">테스트 계정으로 직접 체험해보세요</h3>
