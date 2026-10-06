@@ -31,7 +31,7 @@ function CopyField({ label, value }) {
 
 const techStack = [
   'Next.js', 'TypeScript', 'Node.js', 'Express.js',
-  'PostgreSQL', 'Supabase', 'recharts', 'Vercel', 'Render', '카카오맵 API',
+  'PostgreSQL (원 운영 환경: AWS RDS, 현재 데모: Supabase)', 'recharts', 'Vercel', 'Render', '카카오맵 API',
 ];
 
 const features = [
@@ -61,8 +61,14 @@ export default function GeoMonitorPage() {
 
         {/* 설명 */}
         <p className="text-lg md:text-xl border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
-          지반 계측 센서 데이터를 실시간으로 수집·저장·시각화하는 웹 기반 모니터링 시스템.
+          지반 계측 센서 데이터를 수집·저장·시각화하는 웹 기반 모니터링 시스템. 실제 운영 시에는 1시간 단위로 자동 수집했습니다.
           실제 의뢰 클라이언트 프로젝트로 현장 엔지니어가 언제 어디서든 계측 데이터를 확인하고 분석할 수 있습니다.
+        </p>
+        <p className="text-base md:text-lg border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
+          <strong>역할:</strong> 백엔드 담당으로 참여했다가 팀원이 빠진 뒤 프론트엔드까지 맡아 1인으로 완성했습니다. 완성 후 서비스는 클라이언트 측 인프라로 이관되었고, 이 사이트의 데모는 별도로 구성한 샘플 데이터 환경입니다.
+        </p>
+        <p className="text-base md:text-lg border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
+          <strong>AI 활용:</strong> 리팩토링에서 Claude Code로 코드를 작성하고, 요청한 범위와 실제 변경분을 대조하며 타입 체크·빌드·배포 화면 확인으로 검증했습니다. 이 과정에서 현장 상세 페이지의 측정값 카드가 상태와 무관하게 같은 색으로 표시되던 문제를 발견해 수정했습니다.
         </p>
 
         {/* 이미지 슬라이더 */}

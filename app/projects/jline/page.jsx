@@ -48,6 +48,12 @@ export default function JLinePage() {
         <p className="text-lg md:text-xl border rounded-xl p-4 bg-white/5 backdrop-blur-sm shadow-inner leading-relaxed" style={{ borderColor: 'rgba(236,72,153,0.2)' }}>
           실제 운영 중인 속눈썹 전문 스튜디오의 홈페이지. 네이버에 등록되어 실제 고객이 이용 중인 서비스입니다.
         </p>
+        <p className="text-base md:text-lg border rounded-xl p-4 bg-white/5 backdrop-blur-sm shadow-inner leading-relaxed" style={{ borderColor: 'rgba(236,72,153,0.2)' }}>
+          <strong>역할:</strong> 프론트엔드를 1인으로 개발하고 배포까지 진행했습니다.
+        </p>
+        <p className="text-base md:text-lg border rounded-xl p-4 bg-white/5 backdrop-blur-sm shadow-inner leading-relaxed" style={{ borderColor: 'rgba(236,72,153,0.2)' }}>
+          <strong>AI 활용:</strong> 코드 작성에 ChatGPT를 활용했습니다. 네이버 지도 연동은 ChatGPT가 알려준 방법(clientId)이 동작하지 않아, 검색해서 지도 스크립트의 키 파라미터가 ncpKeyId로 바뀐 것을 확인하고 고쳤습니다. 연동 후에는 배포된 사이트에서 지도가 뜨는지 직접 확인했습니다.
+        </p>
 
         {/* 이미지 슬라이더 */}
         <div className="relative w-full flex justify-center items-center">

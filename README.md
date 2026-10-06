@@ -16,9 +16,9 @@
 ## 📁 프로젝트 소개
 
 ### GeoMonitor 계측 모니터링 시스템
-- 실제 건설 현장(유현건설)에서 운영 중인 실무 프로젝트
-- 지반 계측 센서 데이터를 실시간으로 수집·저장·시각화
-- **기술 스택**: Next.js, TypeScript, Node.js, Express.js, PostgreSQL, AWS RDS, 카카오맵 API, Vercel, Render
+- 실제 건설 현장 클라이언트(유현건설)의 의뢰로 개발한 프로젝트 (완성 후 클라이언트 측 인프라로 이관)
+- 지반 계측 센서 데이터를 수집·저장·시각화 (실제 운영 시 1시간 단위 자동 수집)
+- **기술 스택**: Next.js, TypeScript, Node.js, Express.js, PostgreSQL (원 운영 환경: AWS RDS, 현재 데모: Supabase), 카카오맵 API, Vercel, Render
 - **배포**: [바로가기](https://yuhyun-sensor-monitoring-front.vercel.app)
 - **GitHub**: [바로가기](https://github.com/ShinYeoJin/yuhyun-sensor-monitoring-front)
 

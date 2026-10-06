@@ -61,8 +61,13 @@ export default function BlumPage() {
 
         {/* 설명 */}
         <p className="text-lg md:text-xl border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
-          오스트리아 프리미엄 가구 피팅 브랜드 blum의 랜딩 페이지.
-          동일한 브랜드를 3가지 디자인 컨셉으로 구현한 멀티 버전 프로젝트로, 각 버전은 서로 다른 비주얼 언어와 인터랙션을 사용합니다.
+          클라이언트에게 처음 보여주기 위한 제안용 시안으로, 세 가지 디자인 컨셉과 스크롤 애니메이션을 구현했습니다. blum 공식 사이트의 콘텐츠를 참고해 제작했으며 blum의 공식 사이트가 아닙니다. 이후 프로젝트가 중단되어 시안 단계에서 마무리되었습니다.
+        </p>
+        <p className="text-base md:text-lg border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
+          <strong>역할:</strong> 강사님의 요청(애니메이션을 많이 넣은 세 가지 컨셉)에 따라 시작했고, 구현은 전부 1인으로 진행했습니다.
+        </p>
+        <p className="text-base md:text-lg border-2 border-white rounded-xl p-4 bg-white/10 backdrop-blur-sm shadow-inner leading-relaxed">
+          <strong>AI 활용:</strong> Claude Code로 코드를 작성했습니다. 버전 번호를 재정렬한 뒤 v2 메뉴가 v3 페이지로 이동하는 증상을 직접 확인했고, Claude Code로 원인(v2 레이아웃이 v3 내비게이션·푸터 컴포넌트를 참조)을 추적해 v2 전용 컴포넌트로 교체했습니다.
         </p>
 
         {/* 3가지 버전 카드 */}
