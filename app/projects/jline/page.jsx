@@ -12,9 +12,9 @@ const features = [
   { icon: 'ri-smartphone-line', text: '반응형 디자인 (모바일/태블릿/데스크탑 최적화)' },
   { icon: 'ri-image-2-line', text: '자동 슬라이드 이미지 갤러리 (터치 스와이프 지원)' },
   { icon: 'ri-scissors-cut-line', text: '시술 안내 및 가격 정보' },
-  { icon: 'ri-chat-quote-line', text: '고객 후기 (네이버 리뷰 연동)' },
+  { icon: 'ri-chat-quote-line', text: '고객 후기 (더 보기 버튼으로 네이버 지도 후기 페이지 연결)' },
   { icon: 'ri-map-pin-2-line', text: '네이버 지도 API 위치 안내' },
-  { icon: 'ri-calendar-check-line', text: '네이버 예약 시스템 연동' },
+  { icon: 'ri-calendar-check-line', text: '네이버 예약 페이지·톡톡 문의로 연결' },
 ];
 
 const screenshots = ['/jline1.jpg', '/jline2.png', '/jline3.png'];
