@@ -6,30 +6,30 @@ const techStack = ['Next.js', 'TypeScript', 'Tailwind CSS', 'GSAP', 'Framer Moti
 
 const features = [
   { icon: 'ri-layout-3-line',       text: '3가지 디자인 버전 (미니멀 / 볼드 / 시네마틱)' },
-  { icon: 'ri-stack-line',          text: 'Sticky 스크롤 기반 3D flip 카드 애니메이션' },
-  { icon: 'ri-slideshow-2-line',     text: '스택 구조 서비스 섹션 (전체화면 슬라이드)' },
-  { icon: 'ri-bar-chart-line',      text: '숫자 카운트업 애니메이션' },
+  { icon: 'ri-stack-line',          text: 'Sticky 스크롤 기반 통계 전환 애니메이션 (v2)' },
+  { icon: 'ri-slideshow-2-line',     text: '드래그 제품 캐러셀과 풀스크린 섹션 (v3)' },
+  { icon: 'ri-bar-chart-line',      text: '숫자 카운트업 애니메이션 (v3)' },
   { icon: 'ri-smartphone-line',     text: '반응형 디자인 (모바일 / 태블릿 / 데스크탑)' },
 ];
 
 const versions = [
   {
     label: 'V1 — 미니멀',
-    desc: '화이트 베이스, 절제된 타이포그래피, 인터섹션 옵저버 애니메이션',
+    desc: '화이트 베이스, 절제된 타이포그래피, GSAP ScrollTrigger 스크롤 전환과 스냅',
     href: 'https://blum-landing.vercel.app/v1',
     gradient: 'linear-gradient(135deg, #e5e7eb, #d1d5db)',
     color: '#111827',
   },
   {
     label: 'V2 — 볼드',
-    desc: '블랙 + 레드 포인트, 임팩트 있는 타이틀, 서비스 섹션 3D 플립',
+    desc: '블랙 + 레드 포인트, 임팩트 있는 타이틀, sticky 스크롤 통계와 등장 애니메이션',
     href: 'https://blum-landing.vercel.app/v2',
     gradient: 'linear-gradient(135deg, #1f2937, #dc2626)',
     color: '#f9fafb',
   },
   {
     label: 'V3 — 시네마틱',
-    desc: '딥 네이비 + 골드, GSAP ScrollTrigger, 전체화면 섹션 슬라이드',
+    desc: '딥 네이비 + 골드, GSAP ScrollTrigger, 풀스크린 섹션과 드래그 제품 캐러셀',
     href: 'https://blum-landing.vercel.app/v3',
     gradient: 'linear-gradient(135deg, #0D1117, #D4AF37)',
     color: '#F5F0E8',
