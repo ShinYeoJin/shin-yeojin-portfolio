@@ -165,8 +165,8 @@ export default function GeoMonitorPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {[
                 { label: '문제', text: '정상 수집되던 센서 데이터가 갑자기 전부 누락되고, 서버 로그에 타입 추론 오류가 반복됐습니다.' },
-                { label: '접근', text: '"어제는 됐는데 왜 오늘부터 안 됐는가"를 파고들자, DB가 비어있을 때는 중복 검사 쿼리가 타입 추론을 유발하지 않았지만, 데이터가 쌓인 뒤부터 PostgreSQL이 파라미터 타입을 잘못 추론한다는 걸 발견했습니다.' },
-                { label: '해결', text: '타입 캐스팅으로 우회하는 대신, 중복 확인 쿼리 방식을 DB의 UNIQUE 제약조건을 활용하는 ON CONFLICT DO NOTHING 구조로 교체했습니다.' },
+                { label: '접근', text: '"어제는 됐는데 왜 오늘부터 안 됐는가"를 파고들자, 전날 중복 데이터를 막으려고 바꾼 중복 확인 쿼리가 같은 파라미터($4)를 서로 다른 타입으로 해석하게 만든다는 걸 발견했습니다.' },
+                { label: '해결', text: '타입 캐스팅을 먼저 시도했지만 해결되지 않아, 중복 확인 쿼리 방식 자체를 DB의 UNIQUE 제약조건을 활용하는 ON CONFLICT DO NOTHING 구조로 교체했습니다.' },
               ].map(({ label, text }) => (
                 <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.15)' }}>
                   <span className="font-mono text-[10px] tracking-widest uppercase text-cyan-400/60">{label}</span>
