@@ -120,7 +120,7 @@ export default function BlumPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
               { label: '문제', text: '스크롤 시 콘텐츠가 순차 전환되는 애니메이션을 구현하려 했지만, 애니메이션이 끝나기 전에 다음 콘텐츠가 나오거나, 스크롤 한 번에 여러 콘텐츠가 지나가거나, 이전 콘텐츠가 겹쳐 보이는 문제가 반복됐습니다.' },
-              { label: '접근', text: '원하는 화면과 실제 화면을 녹화해 비교하며 정확히 어느 지점이 다른지 짚어냈고, 여러 차례 구조를 재설계하며 안정적으로 동작하는 방식(CSS scroll-snap, Intersection Observer)을 찾아냈습니다.' },
+              { label: '접근', text: '원하는 화면과 실제 화면을 녹화해 비교하며 정확히 어느 지점이 다른지 짚어냈고, 여러 차례 구조를 재설계하며 CSS scroll-snap과 Intersection Observer를 활용하는 방식으로 개선했습니다.' },
               { label: '해결', text: '스크롤 단위를 고정하고, 각 섹션의 진입·이탈을 감지해 스크롤을 올릴 때는 애니메이션이 역순으로 진행되는 구조를 구현했습니다.' },
             ].map(({ label, text }) => (
               <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}>

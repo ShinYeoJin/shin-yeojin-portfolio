@@ -14,7 +14,7 @@ const categories = [
     icon: 'ri-server-line',
     gradient: 'linear-gradient(135deg, #06b6d4, #14b8a6)',
     dotColor: '#2dd4bf',
-    skills: ['Node.js', 'Express.js', 'PostgreSQL', 'NestJS', 'REST API', 'MySQL'],
+    skills: ['Node.js', 'Express.js', 'PostgreSQL', 'REST API', 'NestJS', 'MySQL'],
   },
   {
     label: 'DevOps',
