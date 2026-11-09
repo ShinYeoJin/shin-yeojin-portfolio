@@ -169,7 +169,7 @@ export default function GeoMonitorPage() {
               {[
                 { label: '문제', text: '정상 수집되던 센서 데이터가 갑자기 전부 누락되고, 서버 로그에 타입 추론 오류가 반복됐습니다.' },
                 { label: '접근', text: '"어제는 됐는데 왜 오늘부터 안 됐는가"를 파고들자, 전날 중복 데이터를 막으려고 바꾼 중복 확인 쿼리가 같은 파라미터($4)를 서로 다른 타입으로 해석하게 만든다는 걸 발견했습니다.' },
-                { label: '해결', text: '타입 캐스팅을 먼저 시도했지만 해결되지 않아, 중복 확인 쿼리 방식 자체를 DB의 UNIQUE 제약조건을 활용하는 ON CONFLICT DO NOTHING 구조로 교체했습니다. 수정 후 에이전트 로그에서 80053 센서는 81건 전송에 78건 저장 완료가 찍혔고, 전송 실패 메시지는 나오지 않았습니다.' },
+                { label: '해결', text: '타입 캐스팅을 먼저 시도했지만 해결되지 않아, 중복 확인 쿼리 방식 자체를 DB의 UNIQUE 제약조건을 활용하는 ON CONFLICT DO NOTHING 구조로 교체했습니다. 수정 후 에이전트 로그에서 80053 센서는 81건 전송에 78건 저장 완료가 찍혔고, 전송 실패 메시지는 나오지 않았습니다. 저장 완료 건수는 서버가 새로 저장한 건수만 세기 때문에(이미 저장된 데이터는 건너뜀) 전송 건수보다 적을 수 있습니다.' },
               ].map(({ label, text }) => (
                 <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(6,182,212,0.05)', border: '1px solid rgba(6,182,212,0.15)' }}>
                   <span className="font-mono text-[10px] tracking-widest uppercase text-cyan-400/60">{label}</span>
