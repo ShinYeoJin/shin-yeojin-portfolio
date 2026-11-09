@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import GeoMonitorFlow from '@/components/GeoMonitorFlow';
 import { useState } from 'react';
 
 function CopyField({ label, value }) {
@@ -119,6 +120,8 @@ export default function GeoMonitorPage() {
             ))}
           </div>
         </div>
+
+        <GeoMonitorFlow />
 
         {/* 문제 해결 섹션 */}
         <motion.div
