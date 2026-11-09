@@ -128,7 +128,7 @@ export default function JLinePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
               { label: '문제', text: '클라이언트가 이미 네이버 예약·톡톡·플레이스 후기로 고객을 응대하고 있었습니다.' },
-              { label: '접근', text: '별도 예약 시스템을 새로 구축하는 대신, 기존 서비스와 연동하는 방식을 검토했습니다.' },
+              { label: '접근', text: '별도 예약 시스템을 새로 구축하는 대신, 기존 서비스와 연결하는 방식을 검토했습니다.' },
               { label: '해결', text: '예약 문의는 네이버 톡톡으로, 즉시 예약은 네이버 예약 페이지로, 후기 보기는 네이버 플레이스 후기로 각각 연결되도록 구현했습니다.' },
             ].map(({ label, text }) => (
               <div key={label} className="flex flex-col gap-1.5 rounded-lg p-3" style={{ background: 'rgba(236,72,153,0.04)', border: '1px solid rgba(236,72,153,0.15)' }}>
