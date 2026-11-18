@@ -74,6 +74,9 @@ export default function GeoMonitorFlow() {
       transition={{ duration: 0.5, delay: 0.15 }}
     >
       <h3 className="text-xl font-bold text-cyan-400 tracking-wide uppercase">데이터 흐름</h3>
+      <p className="text-sm md:text-base text-white/70 leading-relaxed">
+        아래 그림은 실제 운영 구성입니다. 이 사이트의 데모는 수집 에이전트 없이 샘플 데이터를 DB에 직접 넣어 구성했습니다.
+      </p>
 
       <div className="flex flex-col gap-3">
         <h4 className="text-base font-bold text-white/90">수집부터 화면까지</h4>
